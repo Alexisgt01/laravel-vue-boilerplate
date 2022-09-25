@@ -1,0 +1,50 @@
+
+
+.link {
+  text-decoration: none;
+  color: inherit !important;
+  overflow: hidden;
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    .link__first {
+      transform: translate3d(0, -105%, 0);
+    }
+
+    .link__last {
+      transform: translate3d(0, 105%, 0);
+    }
+  }
+
+  .link__first,
+  .link__last {
+    display: inline-block;
+    position: relative;
+    transition: transform .3s;
+
+    &::before {
+      position: absolute;
+      content: attr(data-hover);
+    }
+  }
+
+  .link__first {
+    color: $color-primary;
+
+    &::before {
+      top: 105%;
+      color: $color-secondary;
+    }
+  }
+
+  .link__last {
+    color: $color-secondary;
+
+    &::before {
+      bottom: 105%;
+      color: $color-primary;
+    }
+  }
+
+}

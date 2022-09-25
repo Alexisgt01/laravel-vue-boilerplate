@@ -1,0 +1,48 @@
+.link {
+  text-decoration: none;
+  color: inherit !important;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.link:hover .link__first,
+.link:focus .link__first {
+  transform: translate3d(0, -105%, 0);
+}
+
+.link:hover .link__last,
+.link:focus .link__last {
+  transform: translate3d(0, 105%, 0);
+}
+
+.link .link__first,
+.link .link__last {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.link .link__first::before,
+.link .link__last::before {
+  position: absolute;
+  content: attr(data-hover);
+}
+
+.link .link__first {
+  color: #002654;
+}
+
+.link .link__first::before {
+  top: 105%;
+  color: #ED2939;
+}
+
+.link .link__last {
+  color: #ED2939;
+}
+
+.link .link__last::before {
+  bottom: 105%;
+  color: #002654;
+}
+
